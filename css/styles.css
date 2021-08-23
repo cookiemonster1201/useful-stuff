@@ -1,0 +1,521 @@
+:root {
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "Raleway", sans-serif;
+  --primary-background-color: #fff;
+  --secondary-background-color: #191c26;
+  --primary-font-color: #555;
+  --secondary-font-color: #303030;
+  --white-font: #fff;
+  --accent-color: #ff6c00;
+  --padding-top-bottom: 130px;
+}
+
+body {
+  font-family: var(--primary-font);
+  background-color: var(--primary-background-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+
+.address {
+  font-style: normal;
+}
+
+@-webkit-keyframes wobble{0%{-webkit-transform:translateZ(0);transform:translateZ(0)}15%{-webkit-transform:translate3d(-25%,0,0) rotate(-5deg);transform:translate3d(-25%,0,0) rotate(-5deg)}30%{-webkit-transform:translate3d(20%,0,0) rotate(3deg);transform:translate3d(20%,0,0) rotate(3deg)}45%{-webkit-transform:translate3d(-15%,0,0) rotate(-3deg);transform:translate3d(-15%,0,0) rotate(-3deg)}60%{-webkit-transform:translate3d(10%,0,0) rotate(2deg);transform:translate3d(10%,0,0) rotate(2deg)}75%{-webkit-transform:translate3d(-5%,0,0) rotate(-1deg);transform:translate3d(-5%,0,0) rotate(-1deg)}to{-webkit-transform:translateZ(0);transform:translateZ(0)}}@keyframes wobble{0%{-webkit-transform:translateZ(0);transform:translateZ(0)}15%{-webkit-transform:translate3d(-25%,0,0) rotate(-5deg);transform:translate3d(-25%,0,0) rotate(-5deg)}30%{-webkit-transform:translate3d(20%,0,0) rotate(3deg);transform:translate3d(20%,0,0) rotate(3deg)}45%{-webkit-transform:translate3d(-15%,0,0) rotate(-3deg);transform:translate3d(-15%,0,0) rotate(-3deg)}60%{-webkit-transform:translate3d(10%,0,0) rotate(2deg);transform:translate3d(10%,0,0) rotate(2deg)}75%{-webkit-transform:translate3d(-5%,0,0) rotate(-1deg);transform:translate3d(-5%,0,0) rotate(-1deg)}to{-webkit-transform:translateZ(0);transform:translateZ(0)}}.wobble{-webkit-animation-name:wobble;animation-name:wobble}
+
+@-webkit-keyframes shakeX{0%,to{-webkit-transform:translateZ(0);transform:translateZ(0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}@keyframes shakeX{0%,to{-webkit-transform:translateZ(0);transform:translateZ(0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}.animate__shakeX{-webkit-animation-name:shakeX;animation-name:shakeX}
+/* =========FIXED HEADER */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 80px;
+  padding-top: 20px;
+  background-color: rgba(230, 62, 110, 0.63);
+  color: antiquewhite;
+  font-weight: bold;
+  text-align: center;
+}
+/* =======BUTTON ICON ANIMATION====== */
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  padding: 15px 20px;
+  margin-left: 200px;
+  margin-top: 200px;
+  min-width: 200px;
+  border-radius: 4px;
+  background-color: teal;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  animation-duration: 1000ms;
+  overflow: hidden;
+  transition: background-color 300ms linear 100ms, color 500ms linear 100ms;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: salmon;
+  color: aqua;
+}
+
+.btn::before {
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: rebeccapurple;
+  transition: transform 250ms linear;
+}
+
+.btn::after {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(calc(-50% + 40px));
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+  transition: transform 250ms linear;
+}
+
+.btn:hover::before,
+.btn:focus::before {
+  transform: translateY(-40px);
+}
+
+.btn:hover::after,
+.btn:focus::after {
+  transform: translateY(-50%);
+}
+
+/* ========OVERLAY CARD=============== */
+.team-list-item {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 40px;
+  text-align: center;
+  width: 263px;
+  outline: 1px solid brown;
+}
+
+.team-list-content {
+  padding: 20px 30px;
+}
+
+.team-list-item-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: rgb(85, 85, 85);
+  text-transform: uppercase;
+  line-height: 1.714;
+  margin-bottom: 8px;
+}
+
+.team-list-item-position {
+  font-family: "Roboto Slab", serif;
+  font-size: 13px;
+  color: rgb(85, 85, 85);
+  line-height: 1.846;
+}
+
+.team-list-content-wrapper {
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 99, 71, 0.5);
+  color: #ffffff;
+  padding: 20px;
+  overflow: scroll;
+  transform: rotateY(90deg);
+  transform-origin: left top;
+  opacity: 0;
+  transition: transform 250ms linear, opacity 0ms linear 250ms;
+  /* moving back */
+}
+
+.team-list-link-wrapper:hover .overlay,
+.team-list-link-wrapper:focus .overlay {
+  transform: rotateY(0deg);
+  opacity: 1;
+  transition: transform 250ms linear, opacity 0ms linear;
+  /* moving forth when you hover */
+}
+/* ========FLIP CARD ONE SIDE=========== */
+.scene {
+  margin-top: 100px;
+  width: 300px;
+  height: 300px;
+  border: 3px solid teal;
+  perspective: 600px;
+}
+
+.card {
+  height: 100%;
+  background-color: tomato;
+  transform: rotateY(0deg);
+  transition: transform 600ms linear;
+}
+
+.scene:hover .card,
+.scene:focus .card {
+  transform: rotateY(180deg);
+}
+
+/* ========FLIP CARD TWO SIDES=========== */
+
+
+.flip-scene {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 100px;
+  width: 200px;
+  height: 260px;
+  perspective: 600px;
+  outline: 3px solid black;
+}
+
+.flip-card-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation-name: cardScale;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+}
+
+.flip-card-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-scene:hover .flip-card-wrapper,
+.flip-scene:focus .flip-card-wrapper {
+  transform: rotateY(180deg);
+  animation-name: cardScale;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+}
+
+.flip-card-face.front {
+  background: red;
+}
+/* в спокойном состоянии */
+
+.flip-card-face.back {
+  background: blue;
+  transform: rotateY(180deg);
+}
+/* при ховере */
+
+/*=============== FLIP CARD MINE==================== */
+@keyframes cardFlipForth {
+  0% {
+    transform: scale(1) rotateY(0);
+  }
+
+  50% {
+    transform: scale(1.5) rotateY(90deg);
+  }
+  100% {
+    transform: scale(1) rotateY(180deg);
+  }
+}
+
+@keyframes cardFlipBack {
+  0% {
+    transform: scale(1) rotateY(180deg);
+  }
+
+  50% {
+    transform: scale(1.5) rotateY(90deg);
+  }
+  100% {
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+.project-scene {
+  width: 400px;
+  height: 450px;
+  margin: 100px 75px 90px;
+  perspective: 600px;
+  outline: 2px solid blue;
+}
+
+.project-card__wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.project-card__wrapper.is-flipped {
+  animation-name: cardFlipForth;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.project-card__wrapper.is-flipped-back {
+  animation-name: cardFlipBack;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.project-card__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: cornsilk;
+  backface-visibility: hidden;
+}
+
+.project-card__face.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.project-card__info-box {
+  padding-top: 40px;
+  text-align: center;
+}
+
+/* ===========DropDOWN MENU=========== */
+.product-menu {
+  display: flex;
+  margin-bottom: 100px;
+  margin-left: 20px;
+}
+
+.product-menu__item {
+  position: relative;
+  width: 120px;
+  height: 50px;
+  margin-right: 20px;
+  outline: 2px solid tomato;
+  background-color: cadetblue;
+}
+
+.product-menu__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: brown;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  outline: 2px solid blueviolet;
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+
+.product-menu__item:hover .submenu,
+.product-menu__item:focus .submenu {
+  opacity: 1;
+}
+
+.product-menu__item:hover .product-menu__link,
+.product-menu__item:focus .product-menu__link {
+  background-color: chocolate;
+}
+
+/* ================UNDERLINED MENU====================== */
+.shopping-menu {
+  display: flex;
+  margin-bottom: 100px;
+  margin-left: 30px;
+}
+
+.shopping-menu__item {
+  width: 120px;
+  height: 50px;
+  margin-right: 20px;
+  background-color: #3eda60;
+}
+
+.shopping-menu__link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: brown;
+}
+
+.shopping-menu__link::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scale(0);
+  content: "";
+  width: 100%;
+  height: 6px;
+  background-color: #ff5100;
+  border-radius: 4px;
+  transition: transform 300ms linear;
+}
+
+.shopping-menu__link:hover::after,
+.shopping-menu__link:focus::after {
+  transform: scale(1);
+}
+
+.shopping-menu__item:first-child ::after {
+  transform-origin: left;
+}
+
+.shopping-menu__item:last-child ::after {
+  transform-origin: right;
+}
+
+.header::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 5px;
+  background-color: #ff6c00;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+/* =======================forms======================== */
+.form,
+.sec-form {
+  margin-left: 30px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.form-field,
+.sec-form-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-input,
+.sec-form-input {
+  margin: 0;
+  padding: 10px 20px;
+  font: inherit;
+  border-radius: 3px;
+  border: 1px solid tomato;
+}
+
+.form-input + .form-label {
+  color: #3eda60;
+}
+
+.form-label,
+.sec-form-label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  transition: transform 400ms linear, color 400ms linear;
+}
+
+.form-input:focus + .form-label,
+.sec-form-input:focus + .sec-form-label,
+.form-input:not(:placeholder-shown) + .form-label,
+.sec-form-input:not(:placeholder-shown) + .sec-form-label {
+  transform: translateY(-50px);
+  color: #ff5100;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: aquamarine;
+}
+
+.sec-form-label {
+  left: 40px;
+}
+
+.icon {
+  transition: background-color 500ms linear;
+}
+.sec-form-input:focus ~ .icon,
+.sec-form-input:not(:placeholder-shown) ~ .icon {
+  background-color: brown;
+}
+
+.form:focus-within {
+  background-color: coral;
+}
+
+.form-field:focus-within {
+  background-color: cornflowerblue;
+}
+
+/* .sec-form-field:focus-within > .icon{
+background-color: black;
+} */
+
